@@ -43,12 +43,12 @@ async function handlePullRequest(name, data) {
   const { number, pull_request } = data;
   const { head, user: { login } } = pull_request;
   const { ref, repo, sha } = head;
-  const { full_name, clone_url } = repo;
+  const { full_name, clone_url, ssh_url } = repo;
   const status = postStatus(full_name, sha);
 
   try {
     await status("pending", "Deploying to ▲ Now");
-    await gitClone(clone_url, ref, sha);
+    await gitClone(ssh_url, ref, sha);
     const id_url = await nowDeploy(sha);
     const target_url = await nowAlias(
       id_url,

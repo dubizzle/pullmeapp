@@ -24,6 +24,12 @@
   },
   "now": {
     "name": "pullmeapp",
-    "env": ["DEBUG", "GITHUB_TOKEN", "GITHUB_SECRET", "NOW_TOKEN", "NOW_ALIAS"]
+    "env": [
+      "DEBUG",
+      "GITHUB_TOKEN",
+      "GITHUB_SECRET",
+      "NOW_TOKEN",
+      "NOW_ALIAS"
+    ]
   }
 }
